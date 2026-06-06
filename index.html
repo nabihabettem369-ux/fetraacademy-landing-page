@@ -137,6 +137,69 @@ h1 {
   transition:.25s;
 }
 .btn:hover { transform:translateY(-2px); box-shadow:0 18px 35px rgba(195,162,96,.36); }
+.btn:not(.secondary) {
+  position:relative;
+  overflow:hidden;
+  font-size:18px;
+  padding:18px 34px;
+  border:2px solid rgba(255,255,255,.55);
+  animation:btnPulse 1.25s infinite;
+}
+.btn:not(.secondary)::after {
+  content:"";
+  position:absolute;
+  top:0;
+  right:-80%;
+  width:55%;
+  height:100%;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent);
+  transform:skewX(-22deg);
+  animation:btnShine 2.1s infinite;
+}
+@keyframes btnPulse {
+  0% { transform:scale(1); box-shadow:0 14px 30px rgba(195,162,96,.28), 0 0 0 0 rgba(225,200,137,.48); }
+  70% { transform:scale(1.045); box-shadow:0 20px 42px rgba(195,162,96,.42), 0 0 0 15px rgba(225,200,137,0); }
+  100% { transform:scale(1); box-shadow:0 14px 30px rgba(195,162,96,.28), 0 0 0 0 rgba(225,200,137,0); }
+}
+@keyframes btnShine {
+  0% { right:-80%; }
+  55% { right:130%; }
+  100% { right:130%; }
+}
+.offer span:first-child,
+.offer .urgent-offer {
+  font-size:18px;
+  color:#fff6d8;
+  background:linear-gradient(135deg, rgba(195,162,96,.50), rgba(225,200,137,.20));
+  animation:softGlow 1.4s infinite alternate;
+}
+@keyframes softGlow {
+  from { box-shadow:0 0 0 rgba(225,200,137,0); }
+  to { box-shadow:0 0 22px rgba(225,200,137,.45); }
+}
+.transform-list {
+  margin-top:22px;
+  text-align:right;
+}
+.transform-list ul {
+  list-style:none;
+  padding:0;
+  margin:16px 0 0;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+.transform-list li {
+  background:rgba(255,253,248,.10);
+  border:1px solid rgba(225,200,137,.28);
+  border-radius:18px;
+  padding:12px 16px;
+  color:#fff7e8;
+  font-weight:700;
+}
+@media(max-width:900px){
+  .transform-list ul { grid-template-columns:1fr; }
+}
 .btn.secondary {
   background:transparent;
   color:#f7e7bd;
@@ -340,6 +403,37 @@ h2 {
   .section { padding:56px 0; }
   .card { padding:22px; border-radius:24px; }
 }
+
+#cost .icon {
+  font-size:20px;
+}
+#cost .card {
+  min-height:260px;
+}
+#cost .card p {
+  font-size:16px;
+}
+
+
+/* Fix cost section numbering */
+#cost .phase:before,
+#cost .card:before {
+  content: none !important;
+  display: none !important;
+}
+#cost .card .icon {
+  display:flex !important;
+  width:44px !important;
+  height:44px !important;
+  border-radius:16px !important;
+  align-items:center !important;
+  justify-content:center !important;
+  background:linear-gradient(135deg, var(--gold), var(--gold2)) !important;
+  color:var(--deep) !important;
+  font-weight:900 !important;
+  font-size:20px !important;
+}
+
 </style>
 </head>
 <body>
@@ -359,11 +453,9 @@ h2 {
       <p class="lead">ربما لم تكن المشكلة فيكِ يومًا… بل في الصورة التي تكونت عن نفسكِ منذ سنوات وما زالت تؤثر على قراراتكِ وعلاقاتكِ ونظرتكِ لذاتكِ حتى اليوم.</p>
       <div class="offer">
         <span>عرض الإطلاق: 150$ بدل 300$</span>
-        <span>التسجيلات متاحة للمشتركات</span>
+        <span class="urgent-offer">بقي يومان فقط وينتهي سعر الإطلاق</span>
       </div>
-      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfMvvM8Fs_DliGdtGaThJsNw_lXbulthl0YkjmurQkohuc88A/viewform?usp=header">أريد الانضمام الآن</a>
-      <a class="btn secondary" href="#testimonials">مشاهدة آراء المشاركات</a>
-      <div class="note">.</div>
+      <a class="btn" href="https://forms.gle/qhxMttmWPteYuXAN8" target="_blank" rel="noopener">أريد الانضمام الآن</a>
     </div>
     <div class="hero-image">
       <div class="image-frame">
@@ -398,12 +490,21 @@ h2 {
       <div class="kicker">التكلفة  الاستمرار مع نفس المشاعر </div>
       <h2>ماذا لو استمر هذا الشعور في قيادة حياتكِ؟</h2>
       <p>جرح الرفض لا يبقى مجرد شعور داخلي، بل قد يتحول مع الوقت إلى طريقة كاملة في رؤية الذات والعلاقات والفرص و الحياة ككل.</p>
+      <div class="transform-list">
+        <ul>
+        
+        </ul>
+      </div>
     </div>
     <div class="grid grid-3">
       <div class="card"><div class="icon">1</div><h3>استنزاف نفسي
-و صراع داخلي مستمر</h3><p>تستنزفين نفسكِ في محاولة إثبات قيمتكِ والظهور بصورة  مثالية لا تُرفض.</p></div>
-      <div class="card"><div class="icon">2</div><h3>خجل و انسحاب و تردد </h3><p>تهربين من المواجهة ، طلب الحق، أو اتخاذ القرار خوفًا من النقد أو النبذ.</p></div>
-      <div class="card"><div class="icon">3</div><h3>علاقات غير متوازنة</h3><p> تعطين  كثيرًا، تتنازلين كثيرًا، و في نفس الوقت تشعرين أنكِ غير مقدرة و  غير مرئية.</p></div>
+و صراع داخلي مستمر</h3><p>تلومي نفسكِ وتراجعي أخطائكِ ,تخافي  من أحكام الآخرين، تستنزفي نفسك لظهور بصورة مثالية حتى يصبح عقلكِ في حالة صراع دائمة.</p></div>
+      <div class="card"><div class="icon">2</div><h3>خجل و انسحاب و تردد </h3><p>تهربين من المواجهة ,تخفين جزءًا كبيرًا من شخصيتكِ الحقيقية وتترددين في التعبير عن رأيكِ أو احتياجاتكِ خوفًا من النقد أو الرفض .</p></div>
+      <div class="card"><div class="icon">3</div><h3>علاقات غير متوازنة</h3><p> تتنازلين كثيرًا وتحاولين إرضاء الآخرين على حساب راحتكِ واحتياجاتكِ، ثم تشعرين أنكِ غير مقدّرة أو غير مرئية.</p></div>
+<div class="card"><div class="icon">4</div><h3>ضياع فرص في العمل والمال </h3><p> تترددين في طلب ترقية أو زيادة في راتبكِ، أو ترفضين فرصًا جديدة، أو تقللين من قيمة ما تقدمينه لأنكِ لا تشعرين أنكِ تستحقين أكثر أو أن هناك شخصا أخر يستحق أكثر منك.</p></div>
+<div class="card"><div class="icon">5</div><h3>تأجيل الأحلام والأهداف </h3><p>  تؤجلين مشاريعكِ وخطواتكِ المهمة عامًا بعد عام رغم معرفتكِ بأنها قد تغيّر حياتكِ، لأن الخوف والتردد يسبقانكِ في كل مرة..</p></div>
+<div class="card"><div class="icon">6</div><h3>ضعف الثقة والاستحقاق </h3><p>  مهما حققتِ من إنجازات، يبقى هناك صوت داخلي يشكك فيكِ ويجعلكِ تشعرين أنكِ لستِ كافية بعد، وأن الآخرين أفضل منكِ أو أحق بما تريدين.</p></div>
+
     </div>
   </div>
 </section>
@@ -453,14 +554,24 @@ h2 {
 <section class="section dark">
   <div class="container">
     <div class="section-title">
-      <div class="kicker">التحول</div>
+      <div class="kicker">التحول
+
+<div class="transform-list">
+</div>
+</div>
       <h2>تخيلي لو أنكِ بدأتِ ترين نفسكِ من مكان مختلف</h2>
       <p>الهدف ليس أن تصبحي شخصًا آخر، بل أن تتوقفي عن رؤية نفسكِ من خلال جرح قديم.</p>
     </div>
     <div class="grid grid-3">
       <div class="card"><h3>علاقة سليمة مع نفسك </h3><p>تخففين جلد الذات بعد كل خطأ وتتعاملين مع نفسكِ برحمة أكبر.</p></div>
-      <div class="card"><h3>حضور و كاريزما حقيقية </h3><p>تصبحين أكثر قدرة على التعبير عن رأيكِ  و أفكارك واحتياجاتكِ دون خوف من النقد أو الرفض.</p></div>
+      <div class="card"><h3>ثقة وحضور حقيقي </h3><p>تصبحين أكثر قدرة على التعبير عن رأيكِ  و أفكارك واحتياجاتكِ دون خوف من النقد أو الرفض.</p></div>
       <div class="card"><h3>استحقاق  داخلي أعلى </h3><p>تبدئين في الشعور بقيمتكِ من الداخل بدل انتظار إثباتها من الآخرين.</p></div>
+      <div class="card"><h3>علاقات أكثر دعمًا وتوازنًا  </h3><p>تتجلى في حياتكِ علاقات صحية تقوم على الاحترام والتقدير المتبادل بدل الخوف والتعلق والتنازل المستمر..</p></div>
+      <div class="card"><h3>فرص جديدة في العمل والمال  </h3><p>تصبحين أكثر جرأة في اغتنام الفرص، وطلب ما تستحقينه، وإظهار قيمتكِ وقدراتكِ بثقة أكبر.   </p></div>
+
+<div class="card"><h3>تطور أسرع وخط زمني أقصر  </h3><p>عندما تتوقفين عن محاربة نفسكِ من الداخل، تتحرر طاقتكِ للنمو والتقدم وتحقيق أهدافكِ بسرعة أكبر.   </p></div>
+
+
     </div>
   </div>
 </section>
@@ -475,7 +586,7 @@ h2 {
     <div class="grid grid-3 phases">
       <div class="card phase"><h3>فهم الجذور</h3><p>اكتشاف الرسائل والمعتقدات التي صنعت شعوركِ بعدم الكفاية، وربطها بالصورة الذهنية القديمة.</p></div>
       <div class="card phase"><h3>التحرر من أثر الماضي</h3><p>التعامل مع المشاعر القديمة وآليات الحماية التي تشكلت بسبب جرح الرفض والخوف من عدم القبول.</p></div>
-      <div class="card phase"><h3>بناء الاستحقاق</h3><p>إعادة بناء العلاقة مع الذات، ترسيخ صورة ذهنية صحية، والعودة إلى شعور أعمق بالقيمة.</p></div>
+      <div class="card phase"><h3>بناء الاستحقاق</h3><p>إعادة بناء العلاقة مع الذات، ترسيخ  و تجسيد نسختك الجديدة، والعودة إلى شعور أعمق بالقيمة.</p></div>
     </div>
   </div>
 </section>
@@ -503,7 +614,7 @@ h2 {
       </div>
     </div>
     <div style="text-align:center;margin-top:32px">
-      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfMvvM8Fs_DliGdtGaThJsNw_lXbulthl0YkjmurQkohuc88A/viewform?usp=header">أريد الانضمام الآن</a>
+      <a class="btn" href="https://forms.gle/qhxMttmWPteYuXAN8" target="_blank" rel="noopener">أريد الانضمام الآن</a>
     </div>
   </div>
 </section>
@@ -536,13 +647,64 @@ h2 {
   </div>
 </section>
 
+
+
+<section class="section" id="cost">
+  <div class="container">
+    <div class="section-title">
+      <div class="kicker">تكلفة الاستمرار مع نفس المشاعر</div>
+      <h2>ماذا لو استمر هذا الشعور في قيادة حياتكِ؟</h2>
+      <p>جرح الرفض لا يبقى مجرد شعور داخلي، بل قد يتحول مع الوقت إلى طريقة كاملة في رؤية نفسكِ وعلاقاتكِ وفرصكِ والحياة من حولكِ.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="icon">1</div>
+        <h3>استنزاف نفسي وصراع داخلي مستمر</h3>
+        <p>تقضين وقتًا طويلًا في لوم نفسكِ ومراجعة أخطائكِ والخوف من أحكام الآخرين، حتى يصبح عقلكِ في حالة صراع دائم لا يكاد يتوقف.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">2</div>
+        <h3>خجل وتردد وخوف من الظهور</h3>
+        <p>تخفين جزءًا كبيرًا من شخصيتكِ الحقيقية وتترددين في التعبير عن رأيكِ أو احتياجاتكِ خوفًا من النقد أو الرفض أو عدم التقبل.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">3</div>
+        <h3>علاقات غير متوازنة</h3>
+        <p>تتنازلين كثيرًا وتحاولين إرضاء الآخرين على حساب راحتكِ واحتياجاتكِ، ثم تشعرين أنكِ غير مقدّرة أو غير مرئية.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">4</div>
+        <h3>ضياع فرص في العمل والمال</h3>
+        <p>قد تترددين في طلب ترقية أو زيادة في راتبكِ، أو ترفضين فرصًا جديدة، أو تقللين من قيمة ما تقدمينه لأنكِ لا تشعرين أنكِ تستحقين أكثر.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">5</div>
+        <h3>تأجيل الأحلام والأهداف</h3>
+        <p>تؤجلين مشاريعكِ وخطواتكِ المهمة عامًا بعد عام رغم معرفتكِ بأنها قد تغيّر حياتكِ، لأن الخوف والتردد يسبقانكِ في كل مرة.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">6</div>
+        <h3>ضعف الثقة والاستحقاق</h3>
+        <p>مهما حققتِ من إنجازات، يبقى هناك صوت داخلي يشكك فيكِ ويجعلكِ تشعرين أنكِ لستِ كافية بعد، وأن الآخرين أفضل منكِ أو أحق بما تريدين.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <section class="final lux-border">
   <h2>بعد سنة من الآن…</h2>
   <p>هل تريدين أن يبقى نفس الصوت الداخلي يردد: “أنا لستُ كافية”؟ أم تريدين أن تبدئي رحلة مختلفة مع نفسكِ؟</p>
   <h2>برنامج من الرفض إلى الاستحقاق</h2>
-  <p><strong>عرض الإطلاق: 150$ بدل 300$</strong><br>يبدأ البرنامج: 20 يونيو 2026</p>
-  <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfMvvM8Fs_DliGdtGaThJsNw_lXbulthl0YkjmurQkohuc88A/viewform?usp=header">أريد الانضمام الآن</a>
-  <p class="note">اضغطي على زر "أريد الانضمام الآن" للانتقال إلى استمارة التسجيل.</p>
+  <p><strong>عرض الإطلاق: 150$ بدل 300$</strong><br><strong>بقي يومان فقط وينتهي سعر الإطلاق</strong><br>يبدأ البرنامج: 20 يونيو 2026</p>
+  <a class="btn" href="https://forms.gle/qhxMttmWPteYuXAN8" target="_blank" rel="noopener">أريد الانضمام الآن</a>
+  <p class="note">اضغطي على زر "أريد الانضمام الآن" لإتمام الانضمام مباشرة.</p>
 
 </body>
 </html>
