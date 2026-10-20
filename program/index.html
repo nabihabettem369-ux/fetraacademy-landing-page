@@ -49,8 +49,8 @@
     .dream-header .dream-bridge{margin-top:17px;color:#354f43} .dream-header .dream-leadout{color:var(--green);font-weight:800;margin-top:12px}
     .dream-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
     .dream-card{background:var(--beige-2);border:1px solid var(--border);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;height:100%}
-    .dream-card img{display:block;width:100%;height:190px;object-fit:cover}
-    .dream-card .content{padding:16px 16px 18px;display:flex;flex-direction:column;gap:8px;height:100%}
+    .dream-card img{display:block;width:100%;height:auto;aspect-ratio:333/125;object-fit:contain;background:#f8f3e9;border-bottom:2px solid var(--gold-soft)}
+    .dream-card .content{padding:19px 19px 22px;display:flex;flex-direction:column;gap:8px;height:100%}
     .dream-number{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;background:linear-gradient(135deg,#d9b56c,#b98d3c);color:#fff;font-weight:800;font-size:18px;box-shadow:0 4px 10px rgba(201,164,87,.25)}
     .dream-title{font-size:clamp(20px,2.2vw,24px);line-height:1.45;color:var(--green);font-weight:800;margin:0}
     .dream-text{font-size:15px;color:#4d5d55;margin:0}
@@ -58,7 +58,7 @@
     .cta-box p{margin:0 0 16px;color:#54645c;font-size:17px}
     footer{text-align:center;color:#68766d;padding:28px 16px 32px;font-size:14px}
     @media (max-width:950px){.dream-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media (max-width:640px){header{padding:34px 15px}.dream-grid{grid-template-columns:1fr}.dream-card img{height:220px}.section-card{padding:12px}.button,.button.large{width:100%}.intro{margin-top:28px}}
+    @media (max-width:640px){header{padding:34px 15px}.dream-grid{grid-template-columns:1fr}.dream-card img{height:auto}.section-card{padding:12px}.button,.button.large{width:100%}.intro{margin-top:28px}}
   </style>
 </head>
 <body>
@@ -82,7 +82,7 @@
 <p>تخيّلي أن تنتقلي من الخوف من الرفض والسعي وراء قبول الآخرين، إلى حياة مليئة بالسلام الداخلي والمحبة والثقة والفرص والنمو.</p><p class="dream-leadout">هذا التحوّل يبدأ من علاقتكِ بنفسكِ، ثم ينعكس على علاقتكِ بشريككِ، وعائلتكِ، وعملكِ، وكل جانب من جوانب حياتكِ.</p></div>
 <div class="dream-grid">
 <article class="dream-card">
-<img alt="امرأة تنظر إلى نفسها في المرآة بمحبة وقبول" loading="lazy" src="assets/dream-self.jpg"/>
+<img alt="امرأة تنظر إلى نفسها في المرآة بمحبة وقبول" loading="lazy" src="assets/dream-self-new.jpg"/>
 <div class="content">
 <span class="dream-number">01</span>
 <h3 class="dream-title">علاقتكِ بنفسكِ — شعور أنكِ كافية كما أنتِ</h3>
@@ -90,7 +90,7 @@
 </div>
 </article>
 <article class="dream-card">
-<img alt="امرأة مع شريكها في علاقة دافئة وآمنة" loading="lazy" src="assets/dream-partner.jpg"/>
+<img alt="امرأة مع شريكها في علاقة دافئة وآمنة" loading="lazy" src="assets/dream-partner-new.jpg"/>
 <div class="content">
 <span class="dream-number">02</span>
 <h3 class="dream-title">علاقتكِ العاطفية والزوجية — الحب دون خوف من الرفض</h3>
@@ -98,7 +98,7 @@
 </div>
 </article>
 <article class="dream-card">
-<img alt="امرأة وسط صديقات وتشعر بالانتماء" loading="lazy" src="assets/dream-social.jpg"/>
+<img alt="امرأة وسط صديقات وتشعر بالانتماء" loading="lazy" src="assets/dream-social-new.jpg"/>
 <div class="content">
 <span class="dream-number">03</span>
 <h3 class="dream-title">علاقاتكِ الاجتماعية — الحرية في أن تكوني على طبيعتكِ</h3>
@@ -106,7 +106,7 @@
 </div>
 </article>
 <article class="dream-card">
-<img alt="امرأة ناجحة تتحدث بثقة في العمل" loading="lazy" src="assets/dream-work.jpg"/>
+<img alt="امرأة ناجحة تتحدث بثقة في العمل" loading="lazy" src="assets/dream-work-new.jpg"/>
 <div class="content">
 <span class="dream-number">04</span>
 <h3 class="dream-title">العمل والنجاح — الثقة في الظهور والتعبير عن نفسكِ</h3>
@@ -114,7 +114,7 @@
 </div>
 </article>
 <article class="dream-card">
-<img alt="امرأة تكتب وتفكر في حدودها واحتياجاتها" loading="lazy" src="assets/dream-boundaries.jpg"/>
+<img alt="امرأة تكتب وتفكر في حدودها واحتياجاتها" loading="lazy" src="assets/dream-boundaries-new.jpg"/>
 <div class="content">
 <span class="dream-number">05</span>
 <h3 class="dream-title">الحدود والاحتياجات — اختيار نفسكِ دون شعور بالذنب</h3>
@@ -122,7 +122,7 @@
 </div>
 </article>
 <article class="dream-card">
-<img alt="امرأة تصلي وتتصل بالله بمحبة ورجاء" loading="lazy" src="assets/dream-god.jpg"/>
+<img alt="امرأة تصلي وتتصل بالله بمحبة ورجاء" loading="lazy" src="assets/dream-god-new.jpg"/>
 <div class="content">
 <span class="dream-number">06</span>
 <h3 class="dream-title">علاقتكِ بالله — القرب من الله بمحبة ورجاء</h3>
@@ -130,7 +130,7 @@
 </div>
 </article>
 <article class="dream-card">
-<img alt="امرأة تشعر بالسكينة والهدوء الداخلي" loading="lazy" src="assets/dream-innerpeace.jpg"/>
+<img alt="امرأة تشعر بالسكينة والهدوء الداخلي" loading="lazy" src="assets/dream-innerpeace-new.jpg"/>
 <div class="content">
 <span class="dream-number">07</span>
 <h3 class="dream-title">سلامكِ الداخلي — التحرر من الاستنزاف النفسي</h3>
@@ -138,7 +138,7 @@
 </div>
 </article>
 <article class="dream-card">
-<img alt="امرأة تخطط لمستقبلها بثقة ووعي" loading="lazy" src="assets/dream-future.jpg"/>
+<img alt="امرأة تخطط لمستقبلها بثقة ووعي" loading="lazy" src="assets/dream-future-new.jpg"/>
 <div class="content">
 <span class="dream-number">08</span>
 <h3 class="dream-title">المستقبل والمال — الشعور بالاستحقاق والجرأة على تحقيق أحلامكِ</h3>
@@ -146,7 +146,7 @@
 </div>
 </article>
 <article class="dream-card">
-<img alt="امرأة تحتضن طفلتها بمحبة وأمان" loading="lazy" src="assets/dream-family.jpg"/>
+<img alt="امرأة تحتضن طفلتها بمحبة وأمان" loading="lazy" src="assets/dream-family-new.jpg"/>
 <div class="content">
 <span class="dream-number">09</span>
 <h3 class="dream-title">علاقتكِ بعائلتكِ وأطفالكِ — كسر دائرة الرفض والمقارنة</h3>
