@@ -284,16 +284,25 @@
 </section>
 </div>
 <footer class="footer">أكاديمية فطرة | برنامج من الرفض إلى الاستحقاق</footer><script>
-/* Resolve existing GitHub Pages media in either of the two uploaded folders. */
 (function(){
-const mediaPaths = {"program-intro.mp4": ["fetra_program_with_testimonials_assets/program-intro.mp4", "fetra_program_with_testimonials_assets/program-introduction.mp4", "fetra_program_with_testimonials_assets/video_01.mp4", "fetra_program_with_testimonials_assets/video_02.mp4", "assets/program-intro.mp4", "assets/program-introduction.mp4", "assets/video_01.mp4", "assets/video_02.mp4"], "participant-video.mp4": ["fetra_program_with_testimonials_assets/participant-video.mp4", "fetra_program_with_testimonials_assets/testimonial-future-self.mp4", "fetra_program_with_testimonials_assets/video_02.mp4", "assets/participant-video.mp4", "assets/testimonial-future-self.mp4", "assets/video_02.mp4"], "testimonial-1.jpg": ["fetra_program_with_testimonials_assets/testimonial-1.jpg", "fetra_program_with_testimonials_assets/course-real-1.jpg", "assets/testimonial-1.jpg", "assets/course-real-1.jpg"], "testimonial-2.jpg": ["fetra_program_with_testimonials_assets/testimonial-2.jpg", "fetra_program_with_testimonials_assets/course-real-2.jpg", "assets/testimonial-2.jpg", "assets/course-real-2.jpg"], "testimonial-3.jpg": ["fetra_program_with_testimonials_assets/testimonial-3.jpg", "fetra_program_with_testimonials_assets/course-real-3.jpg", "assets/testimonial-3.jpg", "assets/course-real-3.jpg"], "testimonial-4.jpg": ["fetra_program_with_testimonials_assets/testimonial-4.jpg", "fetra_program_with_testimonials_assets/course-real-4.jpg", "assets/testimonial-4.jpg", "assets/course-real-4.jpg"], "gift-boundaries.webp": ["fetra_program_with_testimonials_assets/gift-boundaries.webp", "assets/gift-boundaries.webp"], "gift-metahealth.webp": ["fetra_program_with_testimonials_assets/gift-metahealth.webp", "assets/gift-metahealth.webp"], "participant-audio-1.mp3": ["fetra_program_with_testimonials_assets/participant-audio-1.mp3", "assets/participant-audio-1.mp3"], "participant-audio-2.mp3": ["fetra_program_with_testimonials_assets/participant-audio-2.mp3", "assets/participant-audio-2.mp3"], "participant-audio-3.mp3": ["fetra_program_with_testimonials_assets/participant-audio-3.mp3", "assets/participant-audio-3.mp3"], "participant-audio-4.mp3": ["fetra_program_with_testimonials_assets/participant-audio-4.mp3", "assets/participant-audio-4.mp3"]};
-document.querySelectorAll("img[src],video source[src],audio source[src]").forEach(el=>{
-const original=el.getAttribute("src"); if(!original || original.startsWith("data:"))return;
-const file=original.split("/").pop(); const opts=mediaPaths[file]; if(!opts)return;
-let i=0; const parent=el.parentElement;
-function advance(){if(i>=opts.length)return;el.src=opts[i++];if(el.tagName==="SOURCE" && parent && typeof parent.load==="function")parent.load();}
-if(el.tagName==="SOURCE"){if(parent)parent.addEventListener("error",advance); }else el.addEventListener("error",advance);
-advance();
-});
+  // Root-level assets are one directory above /program/.
+  const mediaNames={
+    'program-intro.mp4':'video_01.mp4',
+    'participant-video.mp4':'participant-video.mp4',
+    'participant-audio-1.mp3':'participant-audio-1.mp3',
+    'participant-audio-2.mp3':'participant-audio-2.mp3',
+    'participant-audio-3.mp3':'participant-audio-3.mp3',
+    'participant-audio-4.mp3':'participant-audio-4.mp3'
+  };
+  document.querySelectorAll('video,audio').forEach(player=>{
+    const source=player.querySelector('source[src]');
+    if(!source)return;
+    const original=source.getAttribute('src');
+    const name=original.split('/').pop();
+    const target=mediaNames[name];
+    if(!target)return;
+    source.setAttribute('src','../assets/'+target);
+    player.load();
+  });
 })();
 </script></body></html>
