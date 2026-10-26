@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123f34">
+<meta name="description" content="أكملي بياناتك للانضمام إلى برنامج من الرفض إلى الاستحقاق.">
+<title>إتمام الانضمام | من الرفض إلى الاستحقاق</title>
+<style>
+:root{--forest:#103e32;--deep:#0c2b23;--emerald:#20634f;--gold:#c6a05a;--ivory:#fffdf8;--cream:#faf5ec;--text:#263b33;--sub:#736f67;--stroke:#e7dccc;--error:#b64242}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f9f5ee;color:var(--text);min-height:100vh}body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 12% 8%,rgba(198,160,90,.13),transparent 30%),radial-gradient(circle at 90% 95%,rgba(33,98,79,.09),transparent 31%)}
+.wrapper{max-width:1100px;margin:auto;padding:38px 22px 55px;position:relative}.topbrand{text-align:center;color:var(--forest);font-weight:900;font-size:16px;margin:8px auto 29px}.topbrand span{color:#b38b44}.layout{display:grid;grid-template-columns:1fr 1.03fr;min-height:625px;background:var(--ivory);border:1px solid #e5d5bb;border-radius:30px;overflow:hidden;box-shadow:0 24px 70px rgba(25,55,43,.10)}
+.presentation{background:linear-gradient(155deg,#174e3e 0%,#103d31 52%,#0a2b23 100%);color:#fff;padding:54px 49px 39px;position:relative;display:flex;flex-direction:column;justify-content:space-between;isolation:isolate}.presentation:before{content:"";position:absolute;width:350px;height:350px;left:-170px;bottom:-135px;border-radius:50%;border:1px solid rgba(227,192,122,.24);box-shadow:0 0 0 43px rgba(236,201,135,.025),0 0 0 86px rgba(236,201,135,.02);z-index:-1}.eyebrow{color:#e8cf91;font-size:13px;font-weight:800;letter-spacing:.2px}.presentation h1{font-size:clamp(28px,3.4vw,41px);line-height:1.5;margin:18px 0 14px;letter-spacing:-.6px}.presentation .lead{font-size:15px;line-height:2;color:#e2eee8;max-width:400px;margin:0}.price-panel{margin:34px 0 21px;border:1px solid rgba(229,198,132,.55);background:linear-gradient(120deg,rgba(229,198,132,.13),rgba(255,255,255,.025));border-radius:22px;text-align:center;padding:24px 17px 22px}.price-panel .label{font-size:13px;color:#f1db9f;font-weight:800}.price-panel .old{display:inline-block;color:#c2cfc8;text-decoration:line-through;font-size:20px;margin:12px 0 0}.price-panel .new{display:block;color:#f4d991;font-size:clamp(45px,6vw,60px);line-height:1.35;font-weight:900}.price-panel .new small{font-size:23px}.price-panel .save{display:inline-block;color:#f5e7c6;background:rgba(255,255,255,.075);border-radius:999px;font-size:12px;padding:6px 15px;margin-top:7px}.start{border-top:1px solid rgba(255,255,255,.17);padding-top:19px;text-align:center;font-size:14px;color:#f0f5ee}.security{font-size:12px;line-height:1.8;color:#cdded6;margin-top:23px}
+.content{padding:57px clamp(24px,5vw,59px) 43px}.step{display:inline-block;font-size:12px;color:#9b772e;font-weight:800;background:#f8efdf;border:1px solid #e9d8b7;border-radius:30px;padding:8px 13px;margin-bottom:17px}.content h2{font-size:clamp(26px,3vw,35px);color:var(--forest);margin:0 0 12px}.intro{font-size:14px;color:var(--sub);line-height:1.95;margin:0 0 27px}.fields{display:grid;gap:19px}.field label{display:block;color:var(--forest);font-size:13px;font-weight:900;margin-bottom:9px}.field input{width:100%;height:52px;background:#fff;border:1px solid #dcd1c1;border-radius:12px;font:inherit;font-size:14px;color:var(--text);padding:0 16px;outline:0;transition:border-color .15s,box-shadow .15s}.field input::placeholder{color:#a59d92}.field input:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(198,160,90,.14)}.field input[type=email],.field input[type=tel]{direction:ltr;text-align:right}.submit{border:0;width:100%;background:linear-gradient(125deg,#dfc387,#bc924b);border-radius:13px;color:#143b31;font:inherit;font-weight:900;font-size:16px;padding:17px;cursor:pointer;box-shadow:0 12px 24px rgba(168,132,69,.19);transition:transform .18s,filter .18s}.submit:hover{transform:translateY(-2px);filter:brightness(1.025)}.submit:disabled{opacity:.75;cursor:wait;transform:none}.below{display:flex;align-items:center;justify-content:center;gap:8px;color:var(--sub);font-size:12px;text-align:center;margin-top:15px;line-height:1.8}.below .lock{color:#3e7764}.footnote{color:#8b867e;font-size:11px;line-height:1.9;text-align:center;margin-top:23px}.alert{display:none;font-size:12px;line-height:1.8;color:var(--error);background:#fff4f1;border:1px solid #efc4c1;border-radius:12px;padding:10px 13px}.alert.visible{display:block}.footer{text-align:center;margin-top:22px;color:#8b8377;font-size:12px}
+@media(max-width:780px){.wrapper{padding:18px 13px 30px}.topbrand{margin:9px auto 18px}.layout{display:flex;flex-direction:column;border-radius:22px}.presentation{padding:32px 27px 26px}.presentation h1{font-size:29px;margin:12px 0}.presentation .lead{font-size:13px}.price-panel{margin:22px auto 17px;max-width:390px;width:100%;padding:19px 12px}.price-panel .new{font-size:46px}.start{padding-top:15px}.security{display:none}.content{padding:34px 24px 39px}.intro{margin-bottom:23px}.fields{gap:17px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <header class="topbrand">برنامج <span>«من الرفض إلى الاستحقاق»</span></header>
+  <div class="layout">
+    <aside class="presentation" aria-label="تفاصيل البرنامج والسعر">
+      <div>
+        <div class="eyebrow">✦ خطوتكِ الأخيرة للانضمام</div>
+        <h1>مكانكِ في الرحلة<br>يبدأ من هنا ♡</h1>
+        <p class="lead">خطوة جديدة نحو فهم ذاتكِ، وتغيير الأنماط التي لم تعد تخدمكِ، وبناء علاقة أكثر وعيًا مع نفسكِ.</p>
+        <div class="price-panel">
+          <div class="label">سعر الاشتراك في البرنامج</div>
+          <span class="old">300 دولار</span>
+          <div class="new">200 <small>دولار</small></div>
+          <div class="save">السعر الخاص للتسجيل</div>
+        </div>
+        <div class="start">✧ بداية البرنامج: <strong>31 أكتوبر 2026</strong>، إن شاء الله</div>
+      </div>
+      <div class="security">♡ تُستخدم بياناتكِ فقط لإتمام التسجيل والتواصل معكِ بخصوص البرنامج.</div>
+    </aside>
+    <main class="content">
+      <div class="step">01 / بيانات المشاركة</div>
+      <h2>أهلًا بكِ في الرحلة ✨</h2>
+      <p class="intro">املئي البيانات التالية بدقة، ثم اضغطي على «متابعة إلى الدفع» لإكمال اشتراككِ وتأكيد الانضمام.</p>
+      <form class="fields" id="registrationForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfMvvM8Fs_DliGdtGaThJsNw_lXbulthl0YkjmurQkohuc88A/formResponse" method="POST" target="googleFormTarget">
+        <div class="field"><label for="fullName">الاسم الكامل</label><input id="fullName" name="entry.1321264697" type="text" autocomplete="name" placeholder="اكتبي اسمكِ الكامل" required maxlength="150"></div>
+        <div class="field"><label for="whatsappNumber">رقم الواتساب مع مفتاح الدولة</label><input id="whatsappNumber" name="entry.1694696816" type="tel" autocomplete="tel" inputmode="tel" placeholder="مثال: +9665XXXXXXXX" required maxlength="30"></div>
+        <div class="field"><label for="emailAddress">البريد الإلكتروني</label><input id="emailAddress" name="entry.617028442" type="email" autocomplete="email" placeholder="name@example.com" required maxlength="200"></div>
+        <div class="field"><label for="country">الدولة</label><input id="country" name="entry.40538207" type="text" autocomplete="country-name" placeholder="مثال: السعودية" required maxlength="100"></div>
+        <div class="alert" id="formMessage" role="alert">تعذّر تأكيد إرسال البيانات. تحققي من اتصالكِ بالإنترنت، ثم أعيدي المحاولة.</div>
+        <button class="submit" id="submitButton" type="submit">متابعة إلى الدفع ←</button>
+      </form>
+      <div class="below"><span class="lock" aria-hidden="true">◆</span> بعد إرسال البيانات سيتم تحويلكِ إلى صفحة الدفع.</div>
+      <div class="footnote">تأكدي من صحة البريد الإلكتروني ورقم الواتساب حتى نتمكن من التواصل معكِ بعد التسجيل.</div>
+    </main>
+  </div>
+  <footer class="footer">من الرفض إلى الاستحقاق • رحلة تبدأ بقرار</footer>
+</div>
+<iframe title="إرسال نموذج التسجيل" id="googleFormTarget" name="googleFormTarget" style="display:none"></iframe>
+<script>
+(function(){
+  'use strict';
+  const form=document.getElementById('registrationForm');
+  const frame=document.getElementById('googleFormTarget');
+  const button=document.getElementById('submitButton');
+  const message=document.getElementById('formMessage');
+  const paymentUrl='payment.html';
+  let submitted=false;
+  let fallbackTimer;
+  form.addEventListener('submit',function(event){
+    if(!form.checkValidity()){event.preventDefault();form.reportValidity();return;}
+    if(submitted){event.preventDefault();return;}
+    submitted=true;
+    message.classList.remove('visible');
+    button.disabled=true;button.textContent='جارٍ إرسال البيانات…';
+    // If cross-origin iframe load is blocked by the browser, keep the original fallback behavior.
+    fallbackTimer=setTimeout(function(){window.location.assign(paymentUrl);},1800);
+  });
+  frame.addEventListener('load',function(){
+    if(!submitted)return;
+    clearTimeout(fallbackTimer);
+    window.location.assign(paymentUrl);
+  });
+})();
+</script>
+</body>
+</html>
